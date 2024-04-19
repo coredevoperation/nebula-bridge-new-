@@ -1,0 +1,5 @@
+@mixin fontSettings($url, $weight, $ff) {
+    font-family: $ff, sans-serif;
+    src: url($url) format("ttf");
+    font-weight: $weight; 
+}

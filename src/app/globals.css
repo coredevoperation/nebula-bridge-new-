@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --header-bg:  url("../assets/images/header-bg.svg");
+    --main-bg-desktop: url("../assets/images/bg-image.svg");
+    --network-bg: url("../assets/images/bg-image.svg");
+    --select-networkCard-bg:  url("../assets/images/network-bg.svg");
+    --bridge-card-bg: url("../assets/images/bridge-bg.png");
+    --amount-bg: url("../assets/images/amount bg.svg");
+    --term-popup-bg: url("../assets/images/popup-term-bg.svg");
+    --inner-popup-bg: url("../assets/images/inner-popup-bg.svg");
+    --wallet-connect-btnTop-bg: url("../assets/images/wallet-connect-btn.svg");
+    --wallet-connect-bridge-bg: url("../assets/images/connect-bridge-bg.svg");
+}
+
+
+body::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #fff;
+}
+
+/* body {
+    font-family: "Exo", sans-serif;
+} */
+
+.tradeTxs::-webkit-scrollbar,
+.recentTxs::-webkit-scrollbar,
+.quests::-webkit-scrollbar,
+.inner_popup::-webkit-scrollbar,
+.network_list_scrollbar::-webkit-scrollbar,
+.assets::-webkit-scrollbar
+{
+    width: 0px;
+    background-color: #fff;
+}
+
+.inner_popup::-webkit-scrollbar-thumb,
+.network_list_scrollbar::-webkit-scrollbar-thumb,
+.assets::-webkit-scrollbar-thumb
+{
+    width: 0px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-image: linear-gradient(50deg, #151F5C, rgb(148, 54, 54));
+}
+
+
+.main_bg {
+    background-image:  var(--main-bg-desktop);
+}
+
+.header_bg {
+    background-image: var(--header-bg);
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.network_bg {
+    background-image: var(--network-bg);
+}
+
+.select_network_cardBg {
+    background-image: var(--select-networkCard-bg);
+}
+
+.bridge_cardBg {
+    background-image: var(--bridge-card-bg);
+}
+
+.amountBg {
+    background-image: var(--amount-bg);
+}
+
+.term_popup_bg {
+    background-image: var(--term-popup-bg);
+}
+
+.inner_popup_bg {
+    background-image: var(--inner-popup-bg);
+}
+
+.wallet_connect_btnTop {
+    background-image: var(--wallet-connect-btnTop-bg);
+}
+
+.wallet_connect_bridge {
+    background-image: var(--wallet-connect-bridge-bg);
+}
+
+.network_gradient {
+    background-image: linear-gradient(100deg, #080e21 20%, #465266) 10%;
+}
+
+@media screen and (max-width: 421px) {
+    .main_bg {
+        background-image: url("../assets/images/bg-image-mobile.svg");
+    }
+
+    .amountBg {
+        background-image: url("../assets/images/amount-small-bg.svg");
+    }
+
+    .select_network_cardBg {
+        background-image: url("../assets/images/select-network-small-bg.svg");
+    }
+
+    /* .bridge-cardBg {
+        background-image: url("../assets/images/bridge-small-bg.svg");
+    } */
+}
+
+/* gradients */
+.gradient_trade_card {
+    background-image: linear-gradient(50deg, #111430, #151F5C);
+}
+
+.gradient_input {
+    background-image: linear-gradient(50deg, #150b20, #39082d);
+} 
+
+.connect_top_gradient {
+    background-image: linear-gradient(to right, #001B93 25%, #7CC9FF 25%, #001B93 25%, #7CC9FF 25%);
+}
+
+.second-trade-header:nth-child(2) {
+    align-self: flex-start;
+}  
+
+.profile_card_gradient {
+    background-image: linear-gradient(0.5turn, #10131A, #52061D);
+}
+
+.profile_points_box {
+    background-image: linear-gradient(0.5turn, #d05000, #d08300);
+}
+
+/* ANIMATIONS */
+
+.slide_down {
+    @apply opacity-[1] visible translate-y-[0px];
+}
+
+.slide_up {
+    @apply opacity-[0] invisible translate-y-[-200px];
+}
+
+.zoom_in {
+     @apply opacity-[1] visible scale-[1];
+}
+
+.zoom_out {
+    @apply opacity-[0] invisible scale-[0];
+}
+
+.quest_slide_up {
+    @apply opacity-[1] visible translate-y-[-0px];
+}
+
+.quest_slide_down {
+    @apply opacity-[0] invisible translate-y-[200px];
+}
+
+.terms_showUp {
+    animation: popup ease-in-out 3s linear;
+    animation-delay: 10s;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        visibility: none;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+/* button clip path */
+.bridge_btn_clip {      /* top left, top right, bottom right, bottom left */
+    clip-path: polygon(5% 0%, 100% 0%, 100% 100%, -10% 100%);
+}
